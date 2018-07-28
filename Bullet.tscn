@@ -8,7 +8,7 @@
 custom_solver_bias = 0.0
 extents = Vector2( 5, 5 )
 
-[node name="Area2D" type="Area2D" index="0"]
+[node name="Bullet" type="Area2D"]
 
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
@@ -27,5 +27,14 @@ shape = SubResource( 1 )
 [node name="Sprite" type="Sprite" parent="." index="1"]
 
 texture = ExtResource( 2 )
+
+[node name="Timer" type="Timer" parent="." index="2"]
+
+process_mode = 1
+wait_time = 1.0
+one_shot = true
+autostart = false
+
+[connection signal="body_entered" from="." to="." method="_on_Bullet_body_entered"]
 
 
